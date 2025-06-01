@@ -26,13 +26,13 @@
         }
     </style>
     <script>
-        options = []
-        for (i = 'A'; i <= 'Z'; i = String.fromCharCode(i.charCodeAt(0) + 1)) {
-            options.push(i)
-        }
-        for (i = 'a'; i <= 'z'; i = String.fromCharCode(i.charCodeAt(0) + 1)) {
-            options.push(i)
-        }
+        //options = []
+        //for (i = 'A'; i <= 'Z'; i = String.fromCharCode(i.charCodeAt(0) + 1)) {
+        //    options.push(i)
+        //}
+        //for (i = 'a'; i <= 'z'; i = String.fromCharCode(i.charCodeAt(0) + 1)) {
+        //    options.push(i)
+        //}
         //options = ['А', 'Б', 'В', 'Г', 'Ґ', 'Д', 'Е', 'Є', 'Ж', 'З', 'И', 'І', 'Ї', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ь', 'Ю', 'Я']
         window.addEventListener('load', (_event) => {
             console.log('The page has fully loaded');
@@ -65,8 +65,20 @@
             return new Promise(resolve => setTimeout(resolve, ms));
         }
 
+        function makeText(){
+            consonants = "бвгґджзйклмнпрстфхцчшщ";
+            vowels = "аеєиіїоуьюя"
+            c = consonants.chatAt(Math.floor(Math.random() * consonants.length)
+            v = vowels.chatAt(Math.floor(Math.random() * vowels.length)
+            if( Math.random()<0.5 ){
+                return c+v
+            }else{
+                return v+c
+            }
+        }
+
         async function start() {
-            var item = options[Math.floor(Math.random() * options.length)];
+            var item = makeText();// options[Math.floor(Math.random() * options.length)];
             const txt = document.querySelector("#txt");
             const msrange = document.querySelector("#msrange");
             txt.textContent = "" + item
