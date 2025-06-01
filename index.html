@@ -68,12 +68,12 @@
         function makeText(){
             consonants = "бвгґджзйклмнпрстфхцчшщ";
             vowels = "аеєиіїоуьюя"
-            c = consonants.chatAt(Math.floor(Math.random() * consonants.length)
-            v = vowels.chatAt(Math.floor(Math.random() * vowels.length)
+            c = consonants.chatAt(Math.floor(Math.random() * consonants.length))
+            v = vowels.chatAt(Math.floor(Math.random() * vowels.length))
             if( Math.random()<0.5 ){
-                return c+v
+                return c+v;
             }else{
-                return v+c
+                return v+c;
             }
         }
 
